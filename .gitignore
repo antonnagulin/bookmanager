@@ -1,0 +1,39 @@
+# Бэкенд (Django)
+
+/backend/bookmanager/db.sqlite3
+venv/
+db.sqlite3
+backend/**/*.pyc
+backend/**/__pycache__/
+
+# Фронтенд (Vue.js)
+frontend/node_modules/
+frontend/dist/
+frontend/.DS_Store
+frontend/.env.local
+frontend/.env.development.local
+frontend/.env.test.local
+frontend/.env.production.local
+frontend/npm-debug.log*
+frontend/yarn-debug.log*
+frontend/yarn-error.log*
+
+# Общие
+.DS_Store
+.vscode/
+
+# Общие
+.idea/                # папка PyCharm — можно исключить
+*.pyc
+__pycache__/
+
+
+
+
+/backend/.idea/
+.idea/bookmanager.iml
+.idea/misc.xml
+.idea/modules.xml
+.idea/vcs.xml
+.idea/inspectionProfiles/profiles_settings.xml
+.idea/.gitignore
