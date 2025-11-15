@@ -1,9 +1,10 @@
-from django.http import JsonResponse
+import requests
 from rest_framework.decorators import api_view
 from rest_framework.response import Response
 from rest_framework import status
 from .models import Book
 from .serializers import BookSerializer
+
 
 @api_view(['GET', 'POST'])
 def book_list_create(request):
@@ -40,3 +41,39 @@ def book_detail(request, pk):
     if request.method == 'DELETE':
         book.delete()
         return Response(status=status.HTTP_204_NO_CONTENT)
+
+
+@api_view(['GET'])
+def book_autocomplete(request):
+    query = request.GET.get('title', '')
+    if not query:
+        return Response([])
+
+    # Запрос к Google Books
+    url = "https://www.googleapis.com/books/v1/volumes"
+    params = {
+        "q": f"intitle:{query}",
+        "langRestrict": "ru",
+        "maxResults": 10
+    }
+
+    try:
+        r = requests.get(url, params=params)
+        data = r.json()
+
+        books = []
+        for item in data.get("items", []):
+            volume = item.get("volumeInfo", {})
+            books.append({
+                "title": volume.get("title"),
+                "author": ", ".join(volume.get("authors", [])),  # добавляем авторов
+                "year": volume.get("publishedDate", "")[:4],  # берем только год
+                "genre": ", ".join(volume.get("categories", [])),
+                "description": volume.get("description", ""),
+                "cover": volume.get("imageLinks", {}).get("thumbnail", "")
+            })
+
+        return Response(books)
+
+    except Exception as e:
+        return Response([], status=500)

@@ -7,6 +7,11 @@ class Book(models.Model):
     total_copies = models.PositiveIntegerField("Всего экземпляров", default=1)
     available_copies = models.PositiveIntegerField("Доступно экземпляров", default=0)
 
+    year = models.PositiveIntegerField(null=True, blank=True)
+    genre = models.CharField(max_length=255, blank=True)
+    description = models.TextField(blank=True)
+    cover = models.URLField(null=True, blank=True)
+
     def save(self, *args, **kwargs):
         # При сохранении устанавливаем available_copies, если не задано
         if self.available_copies == 0:
