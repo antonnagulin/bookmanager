@@ -1,11 +1,6 @@
 from django.db import models
 from locations.models import LocationRoot, Rack, Section
 
-class Book(models.Model):
-    location_root = models.ForeignKey(LocationRoot, on_delete=models.SET_NULL, null=True)
-    rack = models.ForeignKey(Rack, on_delete=models.SET_NULL, null=True, blank=True)
-    section = models.ForeignKey(Section, on_delete=models.SET_NULL, null=True, blank=True)
-
 
 class Book(models.Model):
     title = models.CharField("Название", max_length=200)

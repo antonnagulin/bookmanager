@@ -8,4 +8,5 @@ urlpatterns = [
     path('book/', include('books.urls')),
     path('reader/', include('readers.urls')),
     path('loan/', include('loans.urls')),
+    path('locations/', include('locations.urls'))
 ] + static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)

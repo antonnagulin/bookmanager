@@ -38,3 +38,4 @@ __pycache__/
 .idea/inspectionProfiles/profiles_settings.xml
 .idea/.gitignore
       # сборка
+.idea/codeStyles/codeStyleConfig.xml
