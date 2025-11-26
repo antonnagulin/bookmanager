@@ -61,8 +61,13 @@
     font-weight: bold;
 }
 
-.table tr:hover {
-    background: #f9fafc;
+/* Стили для hover строк таблицы */
+.table tbody tr:hover {
+  background-color: #e0f0ff; /* светлая подсветка для светлой темы */
+}
+
+body.dark .table tbody tr:hover {
+  background-color: #333; /* тёмная подсветка для темной темы */
 }
 
 

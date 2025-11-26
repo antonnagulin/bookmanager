@@ -105,6 +105,75 @@ onMounted(loadReaders)
 </script>
 
 <style scoped>
+/* Темная тема */
+body.dark .page {
+    background-color: #121212;
+    color: #f5f5f5;
+}
+
+body.dark .table {
+    background-color: #1e1e1e;
+    border-color: #444;
+}
+
+body.dark .table th {
+    background-color: #2c2c2c;
+    color: #f5f5f5;
+}
+
+body.dark .table td {
+    color: #f5f5f5;
+    border-bottom: 1px solid #444;
+}
+
+body.dark .table tbody tr:hover {
+    background-color: #333;
+}
+
+body.dark .modal {
+    background-color: #1f1f1f;
+    color: #f5f5f5;
+    box-shadow: 0 4px 16px rgba(0,0,0,0.7);
+}
+
+body.dark .input,
+body.dark textarea,
+body.dark select {
+    background-color: #2c2c2c;
+    color: #f5f5f5;
+    border: 1px solid #555;
+}
+
+body.dark .btn.add,
+body.dark .btn.save {
+    background-color: #6366f1;
+    color: white;
+}
+
+body.dark .btn.edit {
+    background-color: #1e88e5;
+    color: white;
+}
+
+body.dark .btn.delete {
+    background-color: #e53935;
+    color: white;
+}
+
+body.dark .btn.cancel {
+    background-color: #555;
+    color: white;
+}
+
+body.dark .suggestions {
+    background-color: #2c2c2c;
+    border-color: #555;
+}
+
+body.dark .suggestions li:hover {
+    background-color: #3a3a3a;
+}
+
 .page { max-width: 900px; margin:auto; padding:2rem; }
 .title { text-align:center; font-size:2rem; margin-bottom:1rem; color:#333 }
 .add { background:#2e7d32; color:white; margin-bottom:1rem; padding:0.6rem 1rem; font-weight:bold; border:none; border-radius:6px; cursor:pointer }
