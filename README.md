@@ -4,7 +4,7 @@
 
 ## 🛠 Технологии
 
-* **Бэкенд**: Python 3.11+, Django 4.2+, Django REST Framework
+* **Бэкенд**: Python 3.14+, Django 4.2+, Django REST Framework
 * **Фронтенд**: Vue 3 (Composition API), Vite, Pinia, Vue Router
 * **База данных**: PostgreSQL (рекомендуется) или SQLite (для разработки)
 
@@ -60,12 +60,17 @@ docker-compose up --build
 
 ```bash
 cd backend/bookmanager/
-python -m venv venv
-source venv/bin/activate  # Linux/Mac
-# или venv\Scripts\activate (Windows)
-pip install -r requirements.txt
-python manage.py migrate
-python manage.py runserver
+# Установка зависимостей
+poetry install
+
+# Применение миграций
+poetry run python manage.py migrate
+
+# Проверка проекта на ошибки
+poetry run python manage.py check
+
+# Запуск сервера
+poetry run python manage.py runserver
 ```
 
 **Фронтенд**

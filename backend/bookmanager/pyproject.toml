@@ -1,0 +1,32 @@
+[project]
+name = "bookmanager"
+version = "0.1.0"
+description = "API для управления книгами на DRF"
+authors = [
+    {name = "anton", email = "nagulin03@mail.ru"}
+]
+license = {text = ""}
+readme = "README.md"
+requires-python = ">=3.14,<4.0"
+dependencies = [
+    "django",
+    "djangorestframework",
+    "python-dotenv",
+    "django-cors-headers (>=4.9.0,<5.0.0)",
+    "requests (>=2.32.5,<3.0.0)",
+]
+
+[project.optional-dependencies]
+dev = [
+    "pytest",
+    "pytest-django",
+    "factory-boy",
+    "black",
+    "isort",
+    "flake8",
+    "django-debug-toolbar",
+]
+
+[build-system]
+requires = ["poetry-core"]
+build-backend = "poetry.core.masonry.api"
