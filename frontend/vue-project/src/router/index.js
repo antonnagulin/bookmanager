@@ -5,11 +5,13 @@ import BookDetails from '../views/BookDetails.vue'
 import ReadersList from '../views/ReadersList.vue'
 import LoanBook from '../views/LoanBook.vue'
 import LocationsList from '../components/LocationsList.vue'
+import BooksCreate from '../components/BooksCreate.vue'
 
 
 const routes = [
     { path: '/', component: Home },
-    { path: '/books', component: BooksList },
+    { path: '/books_list', component: BooksList },
+    { path: '/books_create', component: BooksCreate },
     { path: '/books/:id', component: BookDetails },
     { path: '/readers', component: ReadersList },
     { path: '/loan', component: LoanBook },

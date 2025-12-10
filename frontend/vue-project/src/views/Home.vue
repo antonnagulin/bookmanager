@@ -2,7 +2,7 @@
   <div class="home">
     <h1>Добро пожаловать в библиотеку</h1>
     <p class="subtitle">Найдите свою следующую любимую книгу</p>
-    <router-link to="/books" class="btn main-btn">Перейти к каталогу</router-link>
+    <router-link to="/books_list" class="btn main-btn">Перейти к каталогу</router-link>
 
     <section v-if="featuredBooks.length" class="featured">
       <h2>Рекомендуем</h2>

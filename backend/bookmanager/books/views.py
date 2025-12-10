@@ -81,7 +81,13 @@ def book_autocomplete(request):
                 "year": volume.get("publishedDate", "")[:4],
                 "genre": ", ".join(volume.get("categories", [])),
                 "description": volume.get("description", ""),
-                "cover": volume.get("imageLinks", {}).get("thumbnail", ""),
+                "cover": 
+                    volume.get("imageLinks", {}).get("extraLarge") or
+                    volume.get("imageLinks", {}).get("large") or
+                    volume.get("imageLinks", {}).get("medium") or
+                    volume.get("imageLinks", {}).get("small") or
+                    volume.get("imageLinks", {}).get("thumbnail") or
+                    "",
                 "pages": volume.get("pageCount"),
                 "isbn": isbn_13
             })

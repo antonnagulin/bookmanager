@@ -14,7 +14,8 @@
 <script setup>
 const menu = [
   { label: 'Главная', to: '/' },
-  { label: 'Книги', to: '/books' },
+  { label: 'Книги', to: '/books_list' },
+  { label: 'Добавить книгу', to: '/books_create' },
   { label: 'Читатели', to: '/readers' },
   { label: 'Выдать книгу', to: '/loan' },
   { label: 'Библиотеки', to: '/locations' },

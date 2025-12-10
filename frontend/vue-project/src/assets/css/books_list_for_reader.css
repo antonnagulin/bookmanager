@@ -1,0 +1,96 @@
+.page {
+  padding: 20px;
+}
+
+.title {
+  font-size: 28px;
+  font-weight: bold;
+  margin-bottom: 20px;
+}
+
+.books-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(220px, 1fr));
+  gap: 20px;
+}
+
+.book-card {
+  background: white;
+  border-radius: 12px;
+  padding: 15px;
+  box-shadow: 0 3px 8px rgba(0,0,0,0.1);
+  transition: 0.2s;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.book-card:hover {
+  transform: translateY(-3px);
+}
+
+/* Обложка книги одного размера */
+.bigcover {
+  width: 100%;
+  height: 300px;        /* фиксированная высота для всех обложек */
+  object-fit: cover;    /* изображение заполняет контейнер без искажения */
+  border-radius: 10px;
+  margin-bottom: 12px;
+}
+
+/* Если обложки нет */
+.no-cover {
+  width: 100%;
+  height: 300px;
+  background: #ddd;
+  border-radius: 10px;
+  margin-bottom: 12px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: #555;
+}
+
+.book-title-name {
+  font-size: 18px;
+  font-weight: 600;
+  margin-bottom: 4px;
+
+  white-space: nowrap;       /* не переносить текст */
+  overflow: hidden;          /* обрезать лишнее */
+  text-overflow: ellipsis;   /* добавить "..." в конце */
+  max-width: 100%;  
+
+}
+
+.copies {
+  margin-top: 8px;
+  font-size: 14px;
+}
+
+.details-btn {
+  margin-top: 12px;
+  width: 100%;
+  padding: 8px;
+  border-radius: 8px;
+  border: none;
+  background: #4a76a8;
+  color: white;
+  cursor: pointer;
+  transition: 0.2s;
+}
+
+.details-btn:hover {
+  background: #3a5e88;
+}
+
+.book-author-name {
+  font-size: 15px;
+  color: #666;
+  margin-bottom: 10px;
+
+  white-space: nowrap;       /* не переносить текст */
+  overflow: hidden;          /* обрезать лишнее */
+  text-overflow: ellipsis;   /* добавить "..." в конце */
+  max-width: 100%;           /* ограничить ширину блока */
+}
