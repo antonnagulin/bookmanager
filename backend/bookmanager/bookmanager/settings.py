@@ -7,7 +7,8 @@ BASE_DIR = Path(__file__).resolve().parent.parent
 SECRET_KEY = config('SECRET_KEY')
 DEBUG = True
 
-ALLOWED_HOSTS = []
+ALLOWED_HOSTS = ['*']  # только для разработки
+
 
 
 INSTALLED_APPS = [
@@ -44,22 +45,22 @@ MIDDLEWARE = [
 CORS_ALLOW_ALL_ORIGINS = True
 
 # ИЛИ более тонкая настройка:
-CORS_ALLOWED_ORIGINS = [
-    "http://localhost:3000",    # React dev server
-    "http://127.0.0.1:3000",    # React dev server
-    "http://localhost:8000",    # Django dev server
-    "http://127.0.0.1:8000",    # Django dev server
-    "http://localhost:8080",    # Vue dev server
-    "http://localhost:4200",    # Angular dev server
-    # Добавьте другие домены и порты по необходимости
-]
+# CORS_ALLOWED_ORIGINS = [
+#     "http://localhost:3000",    # React dev server
+#     "http://127.0.0.1:3000",    # React dev server
+#     "http://localhost:8000",    # Django dev server
+#     "http://127.0.0.1:8000",    # Django dev server
+#     "http://localhost:8080",    # Vue dev server
+#     "http://localhost:4200",    # Angular dev server
+#     # Добавьте другие домены и порты по необходимости
+# ]
 
-# Чтобы разрешить ВСЕ порты для конкретного домена:
-CORS_ALLOWED_ORIGIN_REGEXES = [
-    r"^http://localhost:\d+$",      # Любой порт на localhost
-    r"^http://127\.0\.0\.1:\d+$",   # Любой порт на 127.0.0.1
-    r"^https?://.*\.example\.com$", # Все поддомены example.com
-]
+# # Чтобы разрешить ВСЕ порты для конкретного домена:
+# CORS_ALLOWED_ORIGIN_REGEXES = [
+#     r"^http://localhost:\d+$",      # Любой порт на localhost
+#     r"^http://127\.0\.0\.1:\d+$",   # Любой порт на 127.0.0.1
+#     r"^https?://.*\.example\.com$", # Все поддомены example.com
+# ]
 
 
 ROOT_URLCONF = 'bookmanager.urls'
